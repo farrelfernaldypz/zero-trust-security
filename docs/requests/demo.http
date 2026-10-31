@@ -1,0 +1,38 @@
+﻿### Login mahasiswa
+POST http://localhost:3000/auth/login
+X-Device-ID: device-mhs-001
+Content-Type: application/json
+
+{"username":"mhs1","password":"Mhs123!"}
+
+### GET nilai (ganti token)
+GET http://localhost:3000/nilai
+Authorization: Bearer {{accessToken}}
+X-Device-ID: device-mhs-001
+
+### GET transkrip sendiri
+GET http://localhost:3000/transkrip/227006001
+Authorization: Bearer {{accessToken}}
+X-Device-ID: device-mhs-001
+
+### Login dosen
+POST http://localhost:3000/auth/login
+X-Device-ID: device-dosen-001
+Content-Type: application/json
+
+{"username":"dosen1","password":"Dosen123!"}
+
+### Ubah nilai ID 1
+PUT http://localhost:3000/nilai/1
+Authorization: Bearer {{accessToken}}
+X-Device-ID: device-dosen-001
+Content-Type: application/json
+
+{"score":87}
+
+### Finalisasi IF101
+POST http://localhost:3000/kelas/if101/finalisasi
+Authorization: Bearer {{accessToken}}
+X-Device-ID: device-dosen-001
+
+{}
